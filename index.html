@@ -1,0 +1,72 @@
+<h4 style="font-weight: normal;"></h4>
+<h1 id="nsgse-186871">NSGSE-186871</h1>
+<h3><p>Modify BHB docker image to work as standalone version</p><h3>
+<h1 id="scope-of-work:">Scope of Work:</h1>
+<ol>
+<font size="5"><li>Add SSH daemon running as only process</li></font>
+<font size="5"><li>Test running standalone from local machine:<ol></font>
+<font size="5"><li>use docker to run the image,</li></font>
+<font size="5"><li>mount volume with sources,</li></font>
+<font size="5"><li>build and run Concordia basic tests</li></font>
+</ol>
+</li>
+</ol>
+<h1 id="steps-">Steps:</h1>
+<ol>
+</p>
+<font size="5"><li>Create working directory   {mdkir code;  cd code}</li-></font>
+</p>
+<font size="5"><li>Clone the trenton inside work directory (git clone ssh://git@nsg-bit.intel.com:7999/fsedev/trenton.git -b feature/NSGSE-192768).</li></font>
+</p>
+<body>
+    <img src="images/2.png" alt="My test image">
+  </body>
+</p>
+<font size="5"><li>Build the Docker Image using the file  ./ build-bhbhwpp.sh -d.</li></font>
+</p>
+<body>
+    <img src="images/3.png" alt="My test image">
+  </body>
+</p>
+<font size="5"><li>Build the Docker Image using the file ./build-bhbswsim.sh -d.</li></font>
+</p>
+<body>
+    <img src="images/4.png" alt="My test image">
+  </body>
+</p>
+<font size="5"><li>Move to Working directory - Code</li></font>
+</p>
+<font size="5"><li>Clone the ent_ssd_test inside work directory (git clone  ssh://git@nsg-bit.intel.com:7999/ise/ent_ssd_test.git -b feature/NSGSE-192768).</li></font>
+</p>
+<body>
+    <img src="images/6.png" alt="My test image">
+  </body>
+</p>
+<font size="5"><li>Chage directory {cd ent_ssd_test/spdktest}</li></font>
+</p>
+<font size="5"><li>To build spdktest using Docker commands ./build-spdktest-docker.sh concordia-b27a</li></font>
+</p>
+<body>
+    <img src="images/8.png" alt="My test image">
+  </body>
+</p>
+<body>
+    <img src="images/8.1.png" alt="My test image">
+  </body>
+</p>
+<font size="5"><li>To run spdktest using Docker commands ./start-spdktest-docker.sh</li></font>
+</p>
+<body>
+    <img src="images/9.png" alt="My test image">
+  </body>
+</p>
+<body>
+    <img src="images/9.1.png" alt="My test image">
+  </body>
+</p>
+<font size="5"><li>To see the logs:   get-log -i 8 -r 0 -f cit.bin </li></font>
+</p>
+<body>
+    <img src="images/10.png" alt="My test image">
+  </body>
+</ol>
